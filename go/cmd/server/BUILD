@@ -9,7 +9,7 @@ go_binary(
 go_library(
     name = "go_default_library",
     srcs = ["server.go"],
-    importpath = "github.com/bazelbuild/codelabs/cmd/server",
+    importpath = "github.com/bazelbuild/codelabs/go/cmd/server",
     visibility = ["//visibility:private"],
     deps = [
         "//proto/logger:go_default_library",
