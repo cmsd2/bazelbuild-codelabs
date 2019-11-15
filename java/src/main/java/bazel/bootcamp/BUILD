@@ -6,12 +6,13 @@ java_binary(
 )
 
 java_binary(
-    name = "logging_client",
+    name = "JavaLoggingClient",
     srcs = ["JavaLoggingClient.java"],
     main_class = "bazel.bootcamp.JavaLoggingClient",
     deps = [
-        ":logging_client_lib",
+        ":JavaLoggingClientLibrary",
     ],
+    visibility = ["//visibility:public"],
 )
 
 java_library(
@@ -31,7 +32,7 @@ java_test(
 )
 
 java_library(
-    name = "logging_client_lib",
+    name = "JavaLoggingClientLibrary",
     srcs = ["JavaLoggingClientLibrary.java"],
     deps = [
         "//proto/logger:logger_java_proto",
@@ -45,7 +46,7 @@ java_library(
     name = "logging_client_library_test_lib",
     srcs = ["JavaLoggingClientLibraryTest.java"],
     deps = [
-        ":logging_client_lib",
+        ":JavaLoggingClientLibrary",
         "@junit_junit//jar",
     ],
 )
